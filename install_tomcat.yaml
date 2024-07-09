@@ -1,0 +1,8 @@
+---
+  - name: install java and deploy tomcat
+    hosts: webserver
+    become: yes
+    roles:
+      - java
+      - tomcat
+
