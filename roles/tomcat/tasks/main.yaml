@@ -8,8 +8,13 @@
       src: /tmp/apache-tomcat-9.0.91.tar.gz
       dest: /opt/
       remote_src: yes
+  - name: Check if the Tomcat folder already contains files
+      stat:
+        path: /opt/tomcat/bin
+      register: tomcat_bin
   - name: Move all contents to the Tomcat folder
     command: mv /opt/apache-tomcat-9.0.91/ /opt/tomcat/
+    when: not tomcat_bin.stat.exists
   - name: tomcat service script
     template:
       src: tomcat.service.j2
