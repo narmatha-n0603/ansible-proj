@@ -1,6 +1,6 @@
 ---
   - name: install java and deploy tomcat
-    hosts: webserver
+    hosts: all
     become: yes
     vars:
       ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
