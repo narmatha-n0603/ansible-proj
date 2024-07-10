@@ -19,7 +19,7 @@
       dest: /etc/systemd/system/tomcat.service
   - name: reload systemd
     command: systemctl deamon-reload
-  -name: start and enable tomcat
+  - name: start and enable tomcat
   systemd:
     name: tomcat
     state: started
