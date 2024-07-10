@@ -21,7 +21,4 @@
   - name: reload systemd
     command: systemctl daemon-reload
   - name: start and enable tomcat
-    systemd:
-      name: tomcat
-      state: started
-      enabled: yes
+    command: /opt/apache-tomcat-9.0.91/bin/startup.sh
