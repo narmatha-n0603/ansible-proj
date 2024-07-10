@@ -8,12 +8,8 @@
       src: /tmp/apache-tomcat-9.0.91.tar.gz
       dest: /opt/
       remote_src: yes
-  - name: create a symbolic link to tomcat
-    file:
-      src: /opt/apache-tomcat-9.0.91.tar.gz
-      dest: /opt/tomcat
-      state: link
-      force: yes
+  - name: Move all contents to the Tomcat folder
+    command: mv /opt/apache-tomcat-9.0.91/ /opt/tomcat/
   - name: tomcat service script
     template:
       src: tomcat.service.j2
@@ -21,4 +17,4 @@
   - name: reload systemd
     command: systemctl daemon-reload
   - name: start and enable tomcat
-    command: /opt/apache-tomcat-9.0.91/bin/startup.sh
+    shell: nohup /opt/tomcat/bin/startup.sh 
