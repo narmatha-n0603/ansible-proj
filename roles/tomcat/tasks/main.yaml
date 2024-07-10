@@ -13,6 +13,7 @@
       src: /opt/apache-tomcat-9.0.91.tar.gz
       dest: /opt/tomcat
       state: link
+      force: yes
   - name: tomcat service script
     template:
       src: tomcat.service.j2
