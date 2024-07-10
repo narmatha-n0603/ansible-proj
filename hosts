@@ -1,5 +1,5 @@
 [webserver]
-webserver1 ansible_host=172.31.43.41 ansible_user=root ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+webserver1 ansible_host=172.31.43.41 ansible_user=root ansible_ssh_common_args='-o StrictHostKeyChecking=no' ansible_ssh_private_key_file=~/.ssh/id_rsa
 [appserver]
-appserver1 ansible_host=172.31.33.13 ansible_user=root ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+appserver1 ansible_host=172.31.33.13 ansible_user=root ansible_ssh_common_args='-o StrictHostKeyChecking=no' ansible_ssh_private_key_file=~/.ssh/id_rsa
 
